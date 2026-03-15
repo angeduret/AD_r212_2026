@@ -1,0 +1,38 @@
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif
+  line-height: 1.6;
+  font-size: 20px;
+  color: #333;
+}
+
+main {
+  max-width: 60ch;
+  margin: 10px auto;
+  padding: 1.5rem;
+}
+
+h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif
+}
+h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif
+}
+h3 {
+    font-family: Georgia, 'Times New Roman', Times, serif
+}
+
+p {
+    font-family: 'Times New Roman', Times, serif
+}
+
+section {
+  margin-top: 2rem;
+}
+
+nav {
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+}
