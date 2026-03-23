@@ -1,1 +1,288 @@
+ /* ================================
+       VARIABLES
+       ================================ */
+    :root {
+      --color-primary: #c08cdf;
+      --color-text: #1f2937;
+      --color-text-light: #6b7280;
+      --color-bg: #ddd5f3;
+      --color-bg-alt: #ddd5f3;
+      --color-overlay: rgba(0, 0, 0, 0.5);
+      --font-base: system-ui, -apple-system, sans-serif;
+      --space-sm: 0.5rem;
+      --space-md: 1rem;
+      --space-lg: 2rem;
+      --space-xl: 4rem;
+    }
 
+    /* ================================
+       THÈME SOMBRE (bonus)
+       ================================ */
+    .dark {
+      --color-primary: #1754a0;
+      --color-text: #e5e7eb;
+      --color-text-light: #9ca3af;
+      --color-bg: #13264e;
+      --color-bg-alt: #13264e;
+      --color-overlay: rgba(0, 0, 0, 0.7);
+    }
+
+    /* ================================
+       BASE
+       ================================ */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-base);
+      line-height: 1.6;
+      color: var(--color-text);
+      background-color: var(--color-bg);
+      margin: 0;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    h1, h2, h3 { line-height: 1.2; }
+
+    a {
+      color: var(--color-primary);
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    /* ================================
+       HEADER + NAVIGATION
+       ================================ */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--space-md) var(--space-lg);
+      border-bottom: 1px solid var(--color-bg-alt);
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.25rem;
+      color: var(--color-text);
+      text-decoration: none;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+    }
+
+    /* Bouton menu burger */
+    .menu-btn {
+      display: none;
+      background: none;
+      border: 2px solid var(--color-text);
+      border-radius: 0.25rem;
+      color: var(--color-text);
+      font-size: 1.25rem;
+      padding: var(--space-sm);
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    /* Bouton thème */
+    #theme-toggle {
+      background: none;
+      border: 2px solid var(--color-text);
+      border-radius: 0.25rem;
+      color: var(--color-text);
+      padding: var(--space-sm) var(--space-md);
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    /* Navigation */
+    .menu ul {
+      display: flex;
+      gap: var(--space-lg);
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .menu a {
+      color: var(--color-text);
+      font-weight: 500;
+    }
+
+    /* Mobile : menu caché par défaut */
+    @media (max-width: 640px) {
+      .menu-btn {
+        display: block;
+      }
+
+      .menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--color-bg);
+        border-bottom: 1px solid var(--color-bg-alt);
+        padding: var(--space-md) var(--space-lg);
+        z-index: 10;
+      }
+
+      .menu.is-open {
+        display: block;
+      }
+
+      .menu ul {
+        flex-direction: column;
+        gap: var(--space-md);
+      }
+
+      header {
+        position: relative;
+      }
+    }
+
+    /* ================================
+       MAIN
+       ================================ */
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: var(--space-lg);
+    }
+
+    section {
+      margin-bottom: var(--space-xl);
+    }
+
+    /* ================================
+       HERO
+       ================================ */
+    .hero {
+      text-align: center;
+      padding: var(--space-xl) 0;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: var(--space-sm);
+    }
+
+    .hero p {
+      color: var(--color-text-light);
+      font-size: 1.1rem;
+    }
+
+    /* ================================
+       BOUTON MODALE
+       ================================ */
+    .modal-open {
+      background-color: var(--color-primary);
+      color: white;
+      border: none;
+      padding: var(--space-sm) var(--space-lg);
+      border-radius: 0.25rem;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: var(--space-md);
+    }
+
+    .modal-open:hover {
+      opacity: 0.9;
+    }
+
+    /* ================================
+       MODALE
+       ================================ */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--color-overlay);
+      z-index: 100;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal.is-visible {
+      display: flex;
+    }
+
+    .modal-content {
+      background: var(--color-bg);
+      border-radius: 0.5rem;
+      padding: var(--space-lg);
+      max-width: 500px;
+      width: 90%;
+      position: relative;
+    }
+
+    .modal-content h2 {
+      margin-top: 0;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: var(--space-md);
+      right: var(--space-md);
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--color-text);
+      line-height: 1;
+    }
+
+    /* ================================
+       ACCORDÉON FAQ
+       ================================ */
+    .faq-item {
+      border-bottom: 1px solid var(--color-bg-alt);
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      padding: var(--space-md) 0;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-text);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-base);
+    }
+
+    .faq-question::after {
+      content: '+';
+      font-size: 1.25rem;
+      transition: transform 0.2s;
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 0 var(--space-md) 0;
+      color: var(--color-text-light);
+    }
+
+    .faq-answer.is-visible {
+      display: block;
+    }
+
+    /* ================================
+       FOCUS VISIBLE
+       ================================ */
+    :focus-visible {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 2px;
+    }
