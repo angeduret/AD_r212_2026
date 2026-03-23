@@ -1,1 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" rel="stylesheet"/>
+  <title>TP2 — Apprendre le JavaScript avec Kuma</title>
+</head>
+<body>
 
+  <!-- ================================
+       HEADER + NAVIGATION
+       ================================ -->
+  <header>
+    <a href="#" class="logo">KUMA</a>
+    <div class="header-right">
+      <button id="theme-toggle">🐻 Kuma Sombre</button>
+   <button class="menu-btn" aria-expanded="false">///</button>
+    </div>
+    <nav class="menu">
+      <ul>
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#apropos">À propos</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ================================
+         HERO + BOUTON MODALE
+         ================================ -->
+    <section id="accueil" class="hero">
+      <h1>Bienvenue sur "Apprendre le JavaScript avec Kuma" !</h1>
+      <p>Un site pour apprendre le JavaScript événementiel avec kuma 🐻‍❄️ & 🐻.</p>
+      <button class="modal-open">En savoir plus ❗</button>
+    </section>
+
+    <!-- ================================
+         MODALE
+         ================================ -->
+    <div class="modal" aria-hidden="true">
+      <div class="modal-content">
+        <button class="modal-close">✕</button>
+        <h2>À propos de ce Kuma</h2>
+        <p>Ce site est un exercice du TP2 R2.12. Il sert de support pour apprendre à manipuler le DOM avec JavaScript.</p>
+        <p>Vous allez coder le menu burger, cette modale, et l'accordéon FAQ en JavaScript pur.</p>
+      </div>
+    </div>
+
+    <!-- ================================
+         SECTION À PROPOS
+         ================================ -->
+    <section id="apropos">
+      <h2>À propos</h2>
+      <p>Ce site démontre les interactions JavaScript de base : ouverture/fermeture de composants, gestion d'état avec des classes CSS, et accessibilité clavier.</p>
+      <p>Tout le JavaScript est dans un fichier <code>script.js</code> séparé. Le CSS gère l'apparence, le JS gère le comportement.</p>
+    </section>
+
+    <!-- ================================
+         ACCORDÉON FAQ
+         ================================ -->
+    <section id="faq">
+      <h2>Questions fréquentes</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">🐻‍❄️❓- "Qu'est-ce que le DOM ?"</button>
+        <div class="faq-answer">
+          <p>Le DOM (Document Object Model) est la représentation de la page Web en mémoire. JavaScript peut le lire et le modifier pour créer des interactions.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">🐻❓- "Pourquoi utiliser classList plutôt que element.style ?"</button>
+        <div class="faq-answer">
+          <p>Parce que le JavaScript gère le comportement et le CSS gère l'apparence. En utilisant classList, on garde chaque responsabilité à sa place.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">🐻‍❄️❓- "C'est quoi addEventListener ?"</button>
+        <div class="faq-answer">
+          <p>C'est la méthode qui permet de dire au navigateur : "quand tel événement arrive sur cet élément, exécute ce code". C'est le cœur du JavaScript événementiel.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">🐻❓- "Pourquoi le menu ne s'ouvre pas ?"</button>
+        <div class="faq-answer">
+          <p>Probablement parce que le fichier script.js n'est pas encore lié, ou parce que le JavaScript n'est pas encore écrit. C'est votre mission !</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================
+         CONTACT
+         ================================ -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Ce site est un exercice pédagogique expliquer par 🐻&🐻‍❄️. Aucun formulaire réel ici — mais vous en coderez un au TP3 !</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p style="text-align: center; padding: 1rem; color: var(--color-text-light);">TP2 R2.12 — Intégration Web — MMI 2026</p>
+  </footer>
+
+  <!-- ================================
+       JAVASCRIPT : à vous de jouer !
+       Créez un fichier script.js et liez-le ici.
+       ================================ -->
+<script src="script.js"></script>
+
+</body>
+</html>
