@@ -1,39 +1,79 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mon projet</title>
   <link rel="stylesheet" href="style.css">
+
 </head>
+
+
 <body>
+
   <header>
     <h1>Mon porfolio</h1>
     <nav>
         <ul>
-            <li><a href="#aproposdemoi">A propos de moi</a></li>
+            <li><a href="#montagevid">Montage Vidéo</a></li>
+            <li><a href="#figma">Maquette de site</a></li>
             <li><a href="#dessindigi">Dessin digital</a></li>
             <li><a href="#live2d">Live2D</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
   </header>
+
   <main>
-    <section id="aproposdemoi">
+    <section id="aproposdemoi" class="hero">
+     <div class="box">
       <h2>A propos de moi</h2>
-        <p>Actuellement étudiante en première année de BUT MMI</p>
+        <p>Actuellement étudiante en première année de BUT MMI, je suis passionnée par le faite d'apprendre à me servrir de nouveaux logiciels (Live2D, Figma, Blender, DaVinci Resolve..)</p>
+     </div>
     </section>
 
-    <section id="dessindigi">
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">Tous</button>
+      <button class="filter-btn" data-filter="etudiant">Étudiant</button>
+      <button class="filter-btn" data-filter="personnel">Personnel</button>
+    </div>
+
+    <section id="montagevid" class="box" data-tag="etudiant">
+      <h2>Montage vidéo</h2>
+        <span class="badge badge-etudiant">Étudiant</span>
+          <p>Réalisation de nombreux projets de derush et de montage sur DaVinci Resolve et Premier Pro</p>
+    </section>
+
+    <section id="figma" class="box" data-tag="etudiant">
+      <h2>Maquette de site internet</h2>
+        <span class="badge badge-etudiant">Étudiant</span>
+          <p>Projets de maquette de site internet marchand "Casa Chic" intéractif et réalisation d'une maquette de livret d'acceuil pour les étudiants de la promo MMI 2026-2027</p>
+    </section>
+
+    <section id="dessindigi" class="box" data-tag="personnel">
       <h2>Dessin digital</h2>
-    <p>
+        <span class="badge badge-personnel">Personnel</span>
+          <p>Je dessine sur des logiciels tel que Clip Studio Paint pro et Ibis Paint X</p>
     </section>
 
-    <section id="live2d">
+    <section id="live2d" class="box" data-tag="personnel">
       <h2>Projet Live2D</h2>
-      <img>
+        <span class="badge badge-personnel">Personnel</span>
+          <p>L'animation d'un avatar "3D" se fait à l'aide de dessins séparés (2D) en calques les uns des autres (+ de 100 calques pour un avatar "basique") et animés pour permettre un effet visuel 3D à l'aide de maillages</p>
     </section>
+
+    <section id="contact">
+      <div class="box">
+        <h2>Contact</h2>
+          <a href="mailto:duretange150307@gmail.com" class="bouton">Mail profesionel</a>
+      </div>
+    </section>
+
   </main>
-  <footer>Copyright © 2026 Protfolio d'Ange DURET - Tous les droits  révervés</footer>
+
+  <footer>Copyright © 2026 Protfolio d'Ange DURET - Tous droits révervés</footer>
+
   <script src="script.js"></script>
 </body>
 </html>
