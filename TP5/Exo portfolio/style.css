@@ -1,7 +1,11 @@
 :root {
   --color-primary: white;
   --color-bg: #2B193D;
+  --color-etudiant: #ffa1e3;
+  --color-personnel: #e76688;
+  --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
+  --spacing-lg: 2rem;
   --radius: 8px;
 }
 
@@ -13,8 +17,203 @@ body {
   background: var(--color-bg);
 }
 
+p {
+  max-width: 65ch;
+}
+
+header {
+  padding: var(--spacing-md);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  padding: 0;
+}
+
+nav a {
+  color: var(--color-primary);
+  text-decoration: none;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius);
+  transition: background-color 0.2s, color 0.2s;
+}
+
+nav a:hover,
+nav a:focus {
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.box {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius);
+  padding: var(--spacing-md);
+}
+
+h1, h2 {
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.filters {
+  display: flex;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  cursor: pointer;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--color-primary);
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.filter-btn:hover,
+.filter-btn:focus,
+.filter-btn.active {
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius);
+  font-size: 0.8rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.badge-etudiant {
+  background-color: var(--color-etudiant);
+  color: white;
+}
+
+.badge-personnel {
+  background-color: var(--color-personnel);
+  color: white;
+}
+
+.bouton {
+  display: inline-block;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius);
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.bouton:hover,
+.bouton:focus {
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+}
+
+footer {
+  text-align: center;
+  padding: var(--spacing-md);
+  color: #C5979D;
+}
+
 .projets-grille {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: var(--spacing-md);
+}
+
+@media (min-width: 640px) {
+  main {
+    padding: var(--spacing-lg) calc(var(--spacing-lg) * 2);
+  }
+}
+
+
+
+body.theme-clair {
+  background: #f0a9d0;
+  color: #2B193D;
+}
+
+body.theme-clair h1,
+body.theme-clair h2 {
+  color: #2B193D;
+}
+
+body.theme-clair .box {
+  background-color: rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+body.theme-clair nav a,
+body.theme-clair .filter-btn,
+body.theme-clair .bouton {
+  color: #2B193D;
+  border-color: #2B193D;
+}
+
+body.theme-clair nav a:hover,
+body.theme-clair nav a:focus,
+body.theme-clair .filter-btn:hover,
+body.theme-clair .filter-btn:focus,
+body.theme-clair .filter-btn.active,
+body.theme-clair .bouton:hover,
+body.theme-clair .bouton:focus {
+  background-color: #2B193D;
+  color: white;
+}
+
+body.theme-clair footer {
+  color: #2B193D;
+}
+
+#toggle-theme {
+  cursor: pointer;
+  margin-top: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--color-primary);
+  transition: background-color 0.2s, color 0.2s;
+}
+
+#toggle-theme:hover,
+#toggle-theme:focus {
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+}
+
+body.theme-clair #toggle-theme {
+  border-color: #2B193D;
+  color: #2B193D;
+}
+
+body.theme-clair #toggle-theme:hover,
+body.theme-clair #toggle-theme:focus {
+  background-color: #2B193D;
+  color: white;
+}
+
+:focus-visible {
+  outline: 2px solid #c2607a;
+  outline-offset: 3px;
 }
